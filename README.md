@@ -1,3 +1,29 @@
+> **About this branch (`v2.22.0-ot.1`)**
+>
+> This branch is Documenso `v2.22.0` (commit `d32d049165db230820465b4f566061ba8fa27012`) with a few patches, one commit per patch on
+> top of the tag. It is the complete corresponding source of a modified version of Documenso that is
+> offered to users over a network, published as required by section 13 of the GNU Affero General
+> Public License v3.0. Documenso and these patches are licensed under the AGPL-3.0 (see `LICENSE`);
+> nothing under `packages/ee/` is changed, and Documenso's copyright and license notices are unchanged.
+>
+> | Patch | What it does | Files |
+> | --- | --- | --- |
+> | 0001 | Removes the QR code (a link to `/share/<token>`) from the signing certificate; the "Signing certificate provided by" block stays, as Documenso draws it for envelopes without a QR token. | `packages/lib/server-only/pdf/render-certificate.ts`, `apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx` |
+> | 0002 | Pins the base image `node:24-alpine3.23` to a digest. | `docker/Dockerfile` |
+> | 0003 | Adds the missing Dutch and French translations of the signing pages (67 strings each). | `packages/lib/translations/nl/web.po`, `packages/lib/translations/fr/web.po` |
+> | 0004 | Adds a "Source code (AGPL-3.0)" link at the bottom of the recipient pages. The URL comes from the required build argument `OT_BRONCODE_URL` (an https URL); the build fails without it. | `apps/remix/app/routes/_recipient+/_layout.tsx`, `docker/Dockerfile`, `packages/lib/translations/{en,nl,fr}/web.po` |
+>
+> Build (same as upstream, plus the build argument):
+>
+> ```bash
+> docker build -f docker/Dockerfile --build-arg OT_BRONCODE_URL=<URL of this branch> .
+> ```
+>
+> Configuration at runtime uses Documenso's usual environment variables; no configuration is part of
+> this branch. The original README follows.
+
+---
+
 <img src="https://github.com/documenso/documenso/assets/13398220/a643571f-0239-46a6-a73e-6bef38d1228b" alt="Documenso Logo">
 
 <p align="center" style="margin-top: 20px">
