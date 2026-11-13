@@ -5749,6 +5749,10 @@ msgstr "Voer een naam in voor je nieuwe map. Mappen helpen je je items te organi
 msgid "Enter a new title"
 msgstr "Voer een nieuwe titel in"
 
+#: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
+msgid "Enter a valid VAT number, for example BE0123456749."
+msgstr "Voer een geldig btw-nummer in, bijvoorbeeld BE0123456749."
+
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Enter a window, e.g. 5m"
 msgstr ""

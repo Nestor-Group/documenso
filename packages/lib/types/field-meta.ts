@@ -140,6 +140,10 @@ export const ZTextFieldMeta = ZBaseFieldMeta.extend({
   lineHeight: ZFieldMetaLineHeight.nullish(),
   letterSpacing: ZFieldMetaLetterSpacing.nullish(),
   verticalAlign: ZFieldMetaVerticalAlign.nullish(),
+  format: z
+    .enum(['vat'])
+    .optional()
+    .describe('A format the value entered by the recipient must match. "vat": an EU VAT number.'),
 });
 
 export type TTextFieldMeta = z.infer<typeof ZTextFieldMeta>;

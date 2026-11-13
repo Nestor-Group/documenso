@@ -1,4 +1,5 @@
 import type { TTextFieldMeta } from '@documenso/lib/types/field-meta';
+import { hasInvalidPrefilledText, isValidVatNumber } from '@documenso/lib/utils/vat-number';
 import { cn } from '@documenso/ui/lib/utils';
 import { Button } from '@documenso/ui/primitives/button';
 import {
@@ -14,6 +15,7 @@ import { Textarea } from '@documenso/ui/primitives/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { msg, plural } from '@lingui/core/macro';
 import { Plural, Trans, useLingui } from '@lingui/react/macro';
+import { useEffect } from 'react';
 import { createCallable } from 'react-call';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -21,9 +23,11 @@ import { z } from 'zod';
 const createSignFieldTextFormSchema = ({
   isInserted,
   characterLimit,
+  format,
 }: {
   isInserted: boolean;
   characterLimit?: number;
+  format?: TTextFieldMeta['format'];
 }) =>
   z.object({
     text: z.string().superRefine((text, ctx) => {
@@ -32,6 +36,16 @@ const createSignFieldTextFormSchema = ({
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: msg`Text is required`.id,
+        });
+
+        return;
+      }
+
+      // An empty value removes inserted text; the required check above covers the rest.
+      if (format === 'vat' && text.trim().length > 0 && !isValidVatNumber(text)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: msg`Enter a valid VAT number, for example BE0123456749.`.id,
         });
 
         return;
@@ -73,12 +87,22 @@ export const SignFieldTextDialog = createCallable<SignFieldTextDialogProps, Sign
     // A limit of 0 means the field has no limit.
     const characterLimit = fieldMeta?.characterLimit || undefined;
 
+    // A prefilled value that failed the format check was not inserted: show it with the error,
+    // so the recipient can correct it instead of typing it again.
+    const invalidPrefilledText = !isInserted && hasInvalidPrefilledText(fieldMeta) ? fieldMeta?.text : undefined;
+
     const form = useForm<TSignFieldTextFormSchema>({
-      resolver: zodResolver(createSignFieldTextFormSchema({ isInserted, characterLimit })),
+      resolver: zodResolver(createSignFieldTextFormSchema({ isInserted, characterLimit, format: fieldMeta?.format })),
       defaultValues: {
-        text: insertedText ?? '',
+        text: insertedText ?? invalidPrefilledText ?? '',
       },
     });
+
+    useEffect(() => {
+      if (invalidPrefilledText) {
+        void form.trigger('text');
+      }
+    }, []);
 
     const onFormSubmit = ({ text }: TSignFieldTextFormSchema) => {
       if (isInserted && text.trim().length === 0) {

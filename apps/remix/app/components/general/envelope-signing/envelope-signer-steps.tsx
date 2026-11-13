@@ -1,4 +1,5 @@
 import { isRequiredField } from '@documenso/lib/utils/advanced-fields-helpers';
+import { hasInvalidPrefilledText } from '@documenso/lib/utils/vat-number';
 import { isSignatureFieldType } from '@documenso/prisma/guards/is-signature-field';
 import { cn } from '@documenso/ui/lib/utils';
 import { Trans, useLingui } from '@lingui/react/macro';
@@ -34,7 +35,12 @@ export const EnvelopeSignerSteps = ({ className }: { className?: string }) => {
   );
 
   const steps = useMemo(() => {
-    const detailFields = recipientFields.filter((field) => !isSignatureFieldType(field.type) && isRequiredField(field));
+    // An optional text field whose prefilled value failed its format check also has to be looked at.
+    const detailFields = recipientFields.filter(
+      (field) =>
+        !isSignatureFieldType(field.type) &&
+        (isRequiredField(field) || (field.fieldMeta?.type === 'text' && hasInvalidPrefilledText(field.fieldMeta))),
+    );
 
     const items: { key: string; label: ReactNode; isDone: boolean }[] = [];
 

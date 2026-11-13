@@ -1,4 +1,5 @@
 import type { TTextFieldMeta as TextFieldMeta } from '../types/field-meta';
+import { isValidVatNumber } from '../utils/vat-number';
 
 export const validateTextField = (
   value: string,
@@ -7,10 +8,15 @@ export const validateTextField = (
 ): string[] => {
   const errors = [];
 
-  const { characterLimit, readOnly, required, fontSize } = fieldMeta;
+  const { characterLimit, readOnly, required, fontSize, format } = fieldMeta;
 
   if (required && !value && isSigningPage) {
     errors.push('Value is required');
+  }
+
+  // Only the value entered while signing is checked; a prefilled value may still be corrected.
+  if (format === 'vat' && value && isSigningPage && !isValidVatNumber(value)) {
+    errors.push('Enter a valid VAT number, for example BE0123456749.');
   }
 
   if (characterLimit !== undefined && characterLimit > 0 && value.length > characterLimit) {

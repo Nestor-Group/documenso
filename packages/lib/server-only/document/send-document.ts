@@ -42,6 +42,7 @@ import { assertEnvelopeContentLimits, getContentsMissingImages } from '../../uti
 import { toCheckboxCustomText, toRadioCustomText } from '../../utils/fields';
 import { getRecipientsInActiveSigningStep } from '../../utils/recipient-groups';
 import { getRecipientsWithMissingFields, isRecipientEmailValidForSending } from '../../utils/recipients';
+import { hasInvalidPrefilledText } from '../../utils/vat-number';
 import { loadContentImages } from '../data-content/load-content-images';
 import { getEnvelopeWhereInput } from '../envelope/get-envelope-by-id';
 import {
@@ -525,9 +526,10 @@ export const extractFieldAutoInsertValues = (
 
   // Auto insert text fields with prefilled values.
   if (field.type === FieldType.TEXT) {
-    const { text } = ZTextFieldMeta.parse(field.fieldMeta);
+    const { text, format } = ZTextFieldMeta.parse(field.fieldMeta);
 
-    if (text) {
+    // A prefilled value that does not match the format is left for the recipient to correct.
+    if (text && !hasInvalidPrefilledText({ format, text })) {
       return {
         fieldId,
         customText: text,

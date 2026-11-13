@@ -5749,6 +5749,10 @@ msgstr "Entrez un nom pour votre nouveau dossier. Les dossiers vous aident à or
 msgid "Enter a new title"
 msgstr "Saisissez un nouveau titre"
 
+#: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
+msgid "Enter a valid VAT number, for example BE0123456749."
+msgstr "Saisissez un numéro de TVA valide, par exemple BE0123456749."
+
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Enter a window, e.g. 5m"
 msgstr ""
