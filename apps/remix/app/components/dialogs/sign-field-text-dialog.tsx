@@ -1,4 +1,5 @@
 import type { TTextFieldMeta } from '@documenso/lib/types/field-meta';
+import { isValidKvkNumber } from '@documenso/lib/utils/kvk-number';
 import { hasInvalidPrefilledText, isValidVatNumber } from '@documenso/lib/utils/vat-number';
 import { cn } from '@documenso/ui/lib/utils';
 import { Button } from '@documenso/ui/primitives/button';
@@ -46,6 +47,15 @@ const createSignFieldTextFormSchema = ({
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: msg`Enter a valid VAT number, for example BE0123456749.`.id,
+        });
+
+        return;
+      }
+
+      if (format === 'kvk' && text.trim().length > 0 && !isValidKvkNumber(text)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: msg`Enter a valid KVK number: 8 digits, for example 12345678.`.id,
         });
 
         return;

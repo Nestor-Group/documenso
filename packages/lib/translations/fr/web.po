@@ -5750,6 +5750,10 @@ msgid "Enter a new title"
 msgstr "Saisissez un nouveau titre"
 
 #: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
+msgid "Enter a valid KVK number: 8 digits, for example 12345678."
+msgstr "Saisissez un numéro KVK valide : 8 chiffres, par exemple 12345678."
+
+#: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
 msgid "Enter a valid VAT number, for example BE0123456749."
 msgstr "Saisissez un numéro de TVA valide, par exemple BE0123456749."
 

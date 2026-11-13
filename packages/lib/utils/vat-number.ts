@@ -1,3 +1,5 @@
+import { isValidKvkNumber } from './kvk-number';
+
 /**
  * Country prefixes of VAT numbers in the European Union (Greece uses "EL", Northern Ireland "XI").
  */
@@ -77,5 +79,17 @@ export const isValidVatNumber = (value: string): boolean => {
  * error, and corrects it.
  */
 export const hasInvalidPrefilledText = (fieldMeta?: { format?: string; text?: string } | null): boolean => {
-  return fieldMeta?.format === 'vat' && Boolean(fieldMeta.text) && !isValidVatNumber(fieldMeta.text ?? '');
+  if (!fieldMeta?.text) {
+    return false;
+  }
+
+  if (fieldMeta.format === 'vat') {
+    return !isValidVatNumber(fieldMeta.text);
+  }
+
+  if (fieldMeta.format === 'kvk') {
+    return !isValidKvkNumber(fieldMeta.text);
+  }
+
+  return false;
 };

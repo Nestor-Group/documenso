@@ -141,9 +141,11 @@ export const ZTextFieldMeta = ZBaseFieldMeta.extend({
   letterSpacing: ZFieldMetaLetterSpacing.nullish(),
   verticalAlign: ZFieldMetaVerticalAlign.nullish(),
   format: z
-    .enum(['vat'])
+    .enum(['vat', 'kvk'])
     .optional()
-    .describe('A format the value entered by the recipient must match. "vat": an EU VAT number.'),
+    .describe(
+      'A format the value entered by the recipient must match. "vat": an EU VAT number. "kvk": a Dutch Chamber of Commerce (KVK) number of 8 digits.',
+    ),
 });
 
 export type TTextFieldMeta = z.infer<typeof ZTextFieldMeta>;
