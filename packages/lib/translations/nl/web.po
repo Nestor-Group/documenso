@@ -11481,6 +11481,10 @@ msgstr "We konden het certificaat niet downloaden. Probeer het later opnieuw."
 msgid "Source"
 msgstr "Bron"
 
+#: apps/remix/app/routes/_recipient+/_layout.tsx
+msgid "Source code (AGPL-3.0)"
+msgstr "Broncode (AGPL-3.0)"
+
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.sso.tsx
 msgid "Space-separated list of domains. Leave empty to allow all domains."
 msgstr "Door spaties gescheiden lijst met domeinen. Laat leeg om alle domeinen toe te staan."

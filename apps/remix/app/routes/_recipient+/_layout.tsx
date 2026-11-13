@@ -1,5 +1,6 @@
 import { useAnalytics } from '@documenso/lib/client-only/hooks/use-analytics';
 import { useOptionalSession } from '@documenso/lib/client-only/providers/session';
+import { env } from '@documenso/lib/utils/env';
 import { cn } from '@documenso/ui/lib/utils';
 import { Button } from '@documenso/ui/primitives/button';
 import { i18n } from '@lingui/core';
@@ -34,6 +35,10 @@ export default function RecipientLayout({ matches }: Route.ComponentProps) {
       match?.id === 'routes/_recipient+/sign.$token+/_index' || match?.id === 'routes/_recipient+/d.$token+/_index',
   );
 
+  // Source code of this modified version (AGPL-3.0, section 13). Set at build time from the
+  // required build argument OT_BRONCODE_URL (docker/Dockerfile). No link without an https URL.
+  const sourceCodeUrl = env('NEXT_PUBLIC_OT_BRONCODE_URL');
+
   return (
     <div className="min-h-screen">
       {!hideHeader && sessionData?.user && <AuthenticatedHeader />}
@@ -45,6 +50,14 @@ export default function RecipientLayout({ matches }: Route.ComponentProps) {
       >
         <Outlet />
       </main>
+
+      {sourceCodeUrl?.startsWith('https://') && (
+        <footer className="px-4 py-3 text-center text-muted-foreground text-xs">
+          <a href={sourceCodeUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            <Trans>Source code (AGPL-3.0)</Trans>
+          </a>
+        </footer>
+      )}
     </div>
   );
 }

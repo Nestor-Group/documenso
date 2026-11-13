@@ -6,6 +6,12 @@ FROM node:24-alpine3.23@sha256:3946fb783fdce8a2812136ea694bc95c698c4f4096f3fd185
 RUN apk add --no-cache openssl
 RUN apk add --no-cache font-freefont
 
+# Source code of this modified version (AGPL-3.0, section 13): an https URL, required. Shown as a
+# link on the recipient pages (apps/remix/app/routes/_recipient+/_layout.tsx).
+ARG OT_BRONCODE_URL
+RUN case "$OT_BRONCODE_URL" in https://?*) ;; *) echo "Build argument OT_BRONCODE_URL (https URL of the source code) is required." >&2; exit 1 ;; esac
+ENV NEXT_PUBLIC_OT_BRONCODE_URL="$OT_BRONCODE_URL"
+
 
 ###########################
 #    BUILDER CONTAINER    #
