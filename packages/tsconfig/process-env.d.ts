@@ -110,6 +110,8 @@ declare namespace NodeJS {
     NEXT_PUBLIC_DISABLE_OIDC_SIGNIN?: string;
     NEXT_PUBLIC_DISABLE_OIDC_AUTO_REDIRECT?: string;
 
+    NEXT_PUBLIC_DISABLE_RECIPIENT_PRESIGN_DOWNLOAD?: string;
+
     NEXT_PRIVATE_BROWSERLESS_URL?: string;
 
     NEXT_PRIVATE_JOBS_PROVIDER?: 'inngest' | 'local' | 'bullmq';

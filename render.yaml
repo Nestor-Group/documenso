@@ -175,6 +175,8 @@ services:
         sync: false
       - key: NEXT_PUBLIC_DISABLE_OIDC_AUTO_REDIRECT
         sync: false
+      - key: NEXT_PUBLIC_DISABLE_RECIPIENT_PRESIGN_DOWNLOAD
+        sync: false
       - key: NEXT_PUBLIC_USE_INTERNAL_URL_BROWSERLESS
         sync: false
 

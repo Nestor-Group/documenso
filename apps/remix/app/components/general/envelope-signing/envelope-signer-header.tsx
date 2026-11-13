@@ -1,3 +1,4 @@
+import { env } from '@documenso/lib/utils/env';
 import { mapSecondaryIdToDocumentId } from '@documenso/lib/utils/envelope';
 import { Badge } from '@documenso/ui/primitives/badge';
 import { Button } from '@documenso/ui/primitives/button';
@@ -9,7 +10,7 @@ import {
 } from '@documenso/ui/primitives/dropdown-menu';
 import { Separator } from '@documenso/ui/primitives/separator';
 import { Plural, Trans } from '@lingui/react/macro';
-import { EnvelopeType, RecipientRole } from '@prisma/client';
+import { EnvelopeType, RecipientRole, SigningStatus } from '@prisma/client';
 import { BanIcon, DownloadCloudIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { match } from 'ts-pattern';
@@ -93,6 +94,11 @@ const MobileDropdownMenu = () => {
   const isEmbedSigning = embedSigningContext !== null;
   const { allowDocumentRejection, allowDownloadPDF } = embedSigningContext || {};
 
+  // Optionally hide the download action until the recipient has signed.
+  const isDownloadHiddenBeforeSigning =
+    env('NEXT_PUBLIC_DISABLE_RECIPIENT_PRESIGN_DOWNLOAD') === 'true' &&
+    recipient.signingStatus !== SigningStatus.SIGNED;
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -102,7 +108,7 @@ const MobileDropdownMenu = () => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end">
-        {allowDownloadPDF !== false && (
+        {allowDownloadPDF !== false && !isDownloadHiddenBeforeSigning && (
           <EnvelopeDownloadDialog
             envelopeId={envelope.id}
             envelopeStatus={envelope.status}

@@ -1,11 +1,12 @@
 import { useCurrentEnvelopeRender } from '@documenso/lib/client-only/providers/envelope-render-provider';
 import { PDF_VIEWER_ERROR_MESSAGES } from '@documenso/lib/constants/pdf-viewer-i18n';
+import { env } from '@documenso/lib/utils/env';
 import { mapSecondaryIdToDocumentId } from '@documenso/lib/utils/envelope';
 import { cn } from '@documenso/ui/lib/utils';
 import { Button } from '@documenso/ui/primitives/button';
 import { Separator } from '@documenso/ui/primitives/separator';
 import { Plural, Trans, useLingui } from '@lingui/react/macro';
-import { EnvelopeType, RecipientRole } from '@prisma/client';
+import { EnvelopeType, RecipientRole, SigningStatus } from '@prisma/client';
 import { motion } from 'framer-motion';
 import {
   ArrowLeftIcon,
@@ -68,6 +69,11 @@ export const DocumentSigningPageViewV2 = () => {
 
   const { t } = useLingui();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
+  // Optionally hide the download action until the recipient has signed.
+  const isDownloadHiddenBeforeSigning =
+    env('NEXT_PUBLIC_DISABLE_RECIPIENT_PRESIGN_DOWNLOAD') === 'true' &&
+    recipient.signingStatus !== SigningStatus.SIGNED;
 
   /**
    * The total remaining fields remaining for the current recipient or selected assistant recipient.
@@ -183,7 +189,7 @@ export const DocumentSigningPageViewV2 = () => {
                   }
                 />
 
-                {allowDownloadPDF && (
+                {allowDownloadPDF && !isDownloadHiddenBeforeSigning && (
                   <EnvelopeDownloadDialog
                     envelopeId={envelope.id}
                     envelopeStatus={envelope.status}
