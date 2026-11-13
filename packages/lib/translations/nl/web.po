@@ -656,7 +656,7 @@ msgstr "{user} heeft een ontvanger verwijderd"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "{user} removed a recipient as an administrator"
-msgstr ""
+msgstr "{user} heeft als beheerder een ontvanger verwijderd"
 
 #. placeholder {0}: data.envelopeItemTitle
 #: packages/lib/utils/document-audit-logs.ts
@@ -1151,7 +1151,7 @@ msgstr "Er is een ontvanger verwijderd"
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
 msgid "A recipient was removed by an administrator"
-msgstr ""
+msgstr "Er is een ontvanger verwijderd door een beheerder"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -1815,7 +1815,7 @@ msgstr "Bijna klaar"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Almost there"
-msgstr ""
+msgstr "Bijna klaar"
 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Already have an account? <0>Sign in instead</0>"
@@ -2161,7 +2161,7 @@ msgstr "Pagina's analyseren"
 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "and"
-msgstr ""
+msgstr "en"
 
 #: apps/remix/app/routes/_authenticated+/inbox.tsx
 msgid "Any documents that you have been invited to will appear here"
@@ -2217,7 +2217,7 @@ msgstr "Uw handtekening wordt toegepast"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Applying your signature..."
-msgstr ""
+msgstr "Je handtekening wordt aangebracht..."
 
 #: apps/remix/app/components/general/organisations/organisation-quota-banner.tsx
 msgid "Approaching fair use limit"
@@ -2453,7 +2453,7 @@ msgstr "Authenticator-app"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Authorise your signature with your signing provider in the popup window"
-msgstr ""
+msgstr "Autoriseer je handtekening bij je ondertekenprovider in het pop-upvenster"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
 msgid "Automatically sign fields"
@@ -2715,7 +2715,7 @@ msgstr "Door verder te gaan met je elektronische handtekening erken en stem je e
 #. placeholder {0}: availableLegalLinks.map((link, index) => ( <Fragment key={link.href}> {index > 0 && ( <> {' '} <Trans>and</Trans>{' '} </> )} <Link to={link.href} target="_blank" rel="noopener noreferrer" className="text-documenso-700 duration-200 hover:opacity-70" > {link.label} </Link> </Fragment> ))
 #: apps/remix/app/components/forms/signup.tsx
 msgid "By proceeding, you agree to our {0}."
-msgstr ""
+msgstr "Als je doorgaat, ga je akkoord met onze {0}."
 
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "By using the electronic signature feature, you are consenting to conduct transactions and receive disclosures electronically. You acknowledge that your electronic signature on documents is binding and that you accept the terms outlined in the documents you are signing."
@@ -2961,7 +2961,7 @@ msgstr "Grafieken"
 #: apps/remix/app/components/forms/password-setup-request-button.tsx
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "Check your email"
-msgstr ""
+msgstr "Controleer je e-mail"
 
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx
@@ -3162,7 +3162,7 @@ msgstr "Document voltooien"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Complete sign in in the popup window"
-msgstr ""
+msgstr "Rond het inloggen af in het pop-upvenster"
 
 #: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
 msgid "Complete sign in with your signing provider in the popup window"
@@ -4572,11 +4572,11 @@ msgstr "Document alles"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document already completed"
-msgstr ""
+msgstr "Document al voltooid"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-complete-dialog.tsx
 msgid "Document already signed"
-msgstr ""
+msgstr "Document al ondertekend"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Document Approved"
@@ -4774,7 +4774,7 @@ msgstr ""
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document no longer available"
-msgstr ""
+msgstr "Document niet meer beschikbaar"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Document no longer available to sign"
@@ -4782,7 +4782,7 @@ msgstr "Document niet langer beschikbaar om te ondertekenen"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document not ready"
-msgstr ""
+msgstr "Document nog niet beschikbaar"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -6726,7 +6726,7 @@ msgstr "Verbergen"
 
 #: packages/ui/components/document/envelope-recipient-field-tooltip.tsx
 msgid "Hide field"
-msgstr ""
+msgstr "Veld verbergen"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Hide license key"
@@ -6831,7 +6831,7 @@ msgstr "Als je staging gebruikt, zorg er dan voor dat je de host-prop op de embe
 
 #: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
 msgid "If you believe this is a mistake, please contact the sender directly."
-msgstr ""
+msgstr "Denk je dat dit een vergissing is, neem dan rechtstreeks contact op met de afzender."
 
 #: packages/email/template-components/template-account-disabled.tsx
 msgid "If you believe this was a mistake, contact us at <0>{supportEmail}</0>."
@@ -6880,7 +6880,7 @@ msgstr "Belangrijk: wat dit betekent"
 #: apps/remix/app/components/forms/signup.tsx
 #: apps/remix/app/components/general/public-legal-links.tsx
 msgid "Imprint"
-msgstr ""
+msgstr "Wettelijke informatie"
 
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: packages/lib/constants/billing.ts
@@ -7009,7 +7009,7 @@ msgstr "Ongeldige code. Probeer het opnieuw."
 #: apps/remix/app/components/general/direct-template/direct-template-invalid-page.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-invalid-direct-template-alert.tsx
 msgid "Invalid direct link template"
-msgstr ""
+msgstr "Ongeldig sjabloon voor directe link"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.sso.tsx
 msgid "Invalid domains"
@@ -7166,7 +7166,7 @@ msgstr "Het is momenteel niet jouw beurt om te ondertekenen. Je ontvangt een e�
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "It's not your turn to sign yet"
-msgstr ""
+msgstr "Je bent nog niet aan de beurt om te ondertekenen"
 
 #: packages/lib/constants/i18n.ts
 msgid "Italian"
@@ -7804,7 +7804,7 @@ msgstr "Ontbrekende ontvangers"
 #: apps/remix/app/utils/toast-error-messages.ts
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Missing signature fields"
-msgstr ""
+msgstr "Ontbrekende handtekeningvelden"
 
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/template/template-page-view-recipients.tsx
@@ -8179,7 +8179,7 @@ msgstr "Geen organisaties gevonden"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "No password set"
-msgstr ""
+msgstr "Geen wachtwoord ingesteld"
 
 #: apps/remix/app/components/tables/settings-public-profile-templates-table.tsx
 msgid "No public profile templates found"
@@ -8444,7 +8444,7 @@ msgstr ""
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
-msgstr ""
+msgstr "Een of meer van je verplichte velden zijn niet opgeslagen. Vernieuw de pagina, vul de lege verplichte velden in en probeer het opnieuw."
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Only .jpg, .png, and .webp files are accepted"
@@ -8844,7 +8844,7 @@ msgstr "Passkeys worden niet ondersteund in deze browser"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 msgid "Passkeys could not be used here. If this document is embedded in another site, that site needs to allow passkeys for the embed."
-msgstr ""
+msgstr "Passkeys kunnen hier niet worden gebruikt. Is dit document ingesloten in een andere website, dan moet die website passkeys toestaan voor het ingesloten venster."
 
 #: apps/remix/app/components/forms/email-transport-form.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -8858,7 +8858,7 @@ msgstr "Wachtwoord"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Password authentication unavailable"
-msgstr ""
+msgstr "Authenticatie met wachtwoord niet beschikbaar"
 
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/generate-certificate-pdf.ts
@@ -8888,7 +8888,7 @@ msgstr ""
 
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "Password sign in is disabled for this instance. Please contact support."
-msgstr ""
+msgstr "Inloggen met een wachtwoord is uitgeschakeld op deze installatie. Neem contact op met support."
 
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -9274,7 +9274,7 @@ msgstr "Upload een logo"
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Please upload a valid image file."
-msgstr ""
+msgstr "Upload een geldig afbeeldingsbestand."
 
 #: packages/lib/constants/i18n.ts
 msgid "Polish"
@@ -9355,7 +9355,7 @@ msgstr "Primaire voorgrond"
 #: apps/remix/app/components/forms/signup.tsx
 #: apps/remix/app/components/general/public-legal-links.tsx
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privacybeleid"
 
 #: apps/remix/app/components/general/template/template-type.tsx
 #: apps/remix/app/components/tables/templates-table.tsx
@@ -10761,7 +10761,7 @@ msgstr "Stuur herinneringen naar de volgende ontvangers"
 #: apps/remix/app/components/forms/password-setup-request-button.tsx
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "Send setup link"
-msgstr ""
+msgstr "Instellingslink versturen"
 
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Send Status"
@@ -10784,7 +10784,7 @@ msgstr "Afzender"
 #: apps/remix/app/components/embed/embed-sender-disabled.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
 msgid "Sender Account Disabled"
-msgstr ""
+msgstr "Account van de afzender uitgeschakeld"
 
 #: apps/remix/app/routes/_recipient+/report.$token.tsx
 msgid "Sender reported"
@@ -11021,11 +11021,11 @@ msgstr ""
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Sign in did not complete. Please try again."
-msgstr ""
+msgstr "Het inloggen is niet voltooid. Probeer het opnieuw."
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Sign in timed out. Please try again."
-msgstr ""
+msgstr "Het inloggen duurde te lang. Probeer het opnieuw."
 
 #: apps/remix/app/routes/embed+/auth+/popup.tsx
 msgid "Sign in to Documenso to continue"
@@ -11039,11 +11039,11 @@ msgstr "Log in op je account"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Sign in with email or passkey"
-msgstr ""
+msgstr "Inloggen met e-mail of passkey"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Sign in with passkey"
-msgstr ""
+msgstr "Inloggen met passkey"
 
 #: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
 msgid "Sign in with your signing provider"
@@ -11228,7 +11228,7 @@ msgstr "Bezig met inloggen..."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Signing link expired"
-msgstr ""
+msgstr "Ondertekeningslink verlopen"
 
 #: apps/remix/app/components/general/document/document-page-view-dropdown.tsx
 #: apps/remix/app/components/tables/documents-table-action-dropdown.tsx
@@ -11259,7 +11259,7 @@ msgstr "Ondertekeningsstatus"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue."
-msgstr ""
+msgstr "Voor het ondertekenen van dit veld is een wachtwoord nodig, maar je account heeft er geen. We kunnen je een link mailen om er een in te stellen. Log daarna opnieuw in en keer terug naar dit document om verder te gaan."
 
 #: apps/remix/app/components/embed/embed-recipient-expired.tsx
 msgid "Signing Window Expired"
@@ -11283,7 +11283,7 @@ msgstr "Ondertekenvenster verlopen voor {0}"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Signing you in..."
-msgstr ""
+msgstr "Je wordt ingelogd..."
 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Signup is currently disabled or not available for your email domain."
@@ -11319,7 +11319,7 @@ msgstr ""
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Some fields were not saved"
-msgstr ""
+msgstr "Sommige velden zijn niet opgeslagen"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Some searches failed — results may be incomplete."
@@ -11422,7 +11422,7 @@ msgstr "Er is iets misgegaan bij het verzenden van de bevestigingsmail."
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Something went wrong while signing you in. Please try again."
-msgstr ""
+msgstr "Er ging iets mis bij het inloggen. Probeer het opnieuw."
 
 #: apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx
 msgid "Something went wrong while updating the envelope item."
@@ -11541,7 +11541,7 @@ msgstr ""
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Storage access was denied, so we cannot keep you signed in inside this embed. Please try again."
-msgstr ""
+msgstr "De toegang tot de opslag werd geweigerd, waardoor je in dit ingesloten venster niet ingelogd kunt blijven. Probeer het opnieuw."
 
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 msgid "Stripe"
@@ -12075,7 +12075,7 @@ msgstr "Templates gedeeltelijk verwijderd"
 #: apps/remix/app/components/forms/signup.tsx
 #: apps/remix/app/components/general/public-legal-links.tsx
 msgid "Terms of Service"
-msgstr ""
+msgstr "Gebruiksvoorwaarden"
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
 msgid "Test"
@@ -12231,7 +12231,7 @@ msgstr "Het document kon niet worden gemaakt vanwege ontbrekende of ongeldige in
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "The document could not be sent because some signers do not have a signature field. Please edit the template and add a signature field for each signer."
-msgstr ""
+msgstr "Het document kon niet worden verzonden omdat sommige ondertekenaars geen handtekeningveld hebben. Bewerk het sjabloon en voeg voor elke ondertekenaar een handtekeningveld toe."
 
 #: apps/remix/app/components/dialogs/admin-document-delete-dialog.tsx
 msgid "The Document has been deleted successfully."
@@ -12348,7 +12348,7 @@ msgstr "De velden zijn succesvol bijgewerkt naar de nieuwe methode voor veldinvo
 #: apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "The file is not a valid PDF or is password protected."
-msgstr ""
+msgstr "Het bestand is geen geldige PDF of is beveiligd met een wachtwoord."
 
 #: apps/remix/app/components/dialogs/folder-delete-dialog.tsx
 msgid "The folder you are trying to delete does not exist."
@@ -12388,11 +12388,11 @@ msgstr "Het volgende team is verwijderd. Je hebt geen toegang meer tot dit team 
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "The image could not be loaded. Please try again."
-msgstr ""
+msgstr "De afbeelding kon niet worden geladen. Probeer het opnieuw."
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "The image must be smaller than 5MB."
-msgstr ""
+msgstr "De afbeelding moet kleiner zijn dan 5 MB."
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "The license key has been copied to your clipboard"
@@ -12737,15 +12737,15 @@ msgstr ""
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This direct link template cannot be used because one or more signers do not have a signature field assigned."
-msgstr ""
+msgstr "Dit sjabloon voor directe link kan niet worden gebruikt omdat voor een of meer ondertekenaars geen handtekeningveld is toegewezen."
 
 #: apps/remix/app/components/general/direct-template/direct-template-invalid-page.tsx
 msgid "This direct link template cannot be used because one or more signers do not have a signature field assigned. Please contact the sender to update the template."
-msgstr ""
+msgstr "Dit sjabloon voor directe link kan niet worden gebruikt omdat voor een of meer ondertekenaars geen handtekeningveld is toegewezen. Neem contact op met de afzender om het sjabloon te laten aanpassen."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document can no longer be signed. It may have been removed by the sender, or your signing access may have been revoked. Please contact the sender for a new signing link."
-msgstr ""
+msgstr "Dit document kan niet meer worden ondertekend. Misschien heeft de afzender het verwijderd, of is je toegang om te ondertekenen ingetrokken. Vraag de afzender om een nieuwe ondertekeningslink."
 
 #: packages/email/template-components/template-document-super-delete.tsx
 msgid "This document can not be recovered, if you would like to dispute the reason for future documents please contact support."
@@ -12777,7 +12777,7 @@ msgstr "Dit document kan op dit moment niet als sjabloon worden opgeslagen. Prob
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has already been completed and no further signatures can be added."
-msgstr ""
+msgstr "Dit document is al voltooid; er kunnen geen handtekeningen meer worden toegevoegd."
 
 #: apps/remix/app/components/general/envelope-editor/envelope-recipient-selector.tsx
 #: packages/ui/primitives/recipient-selector.tsx
@@ -12799,7 +12799,7 @@ msgstr "Dit document is door de eigenaar geannuleerd."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has been cancelled by the sender and can no longer be signed. Please contact the sender if you believe this is a mistake."
-msgstr ""
+msgstr "De afzender heeft dit document geannuleerd; het kan niet meer worden ondertekend. Neem contact op met de afzender als je denkt dat dit een vergissing is."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
 msgid "This document has been rejected by a recipient"
@@ -12807,7 +12807,7 @@ msgstr "Dit document is geweigerd door een ontvanger"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has been rejected by a recipient and can no longer be signed."
-msgstr ""
+msgstr "Dit document is geweigerd door een ontvanger en kan niet meer worden ondertekend."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
 msgid "This document has been signed by all recipients"
@@ -12815,7 +12815,7 @@ msgstr "Dit document is door alle ontvangers ondertekend"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has not been sent for signing yet. Please wait for the sender to send it before signing."
-msgstr ""
+msgstr "Dit document is nog niet ter ondertekening verzonden. Wacht tot de afzender het verzendt voordat je ondertekent."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has too many recipients. Please remove some recipients or contact support if you need more."
@@ -12832,11 +12832,11 @@ msgstr "Dit document is momenteel een concept en is nog niet verzonden"
 #: apps/remix/app/components/embed/embed-sender-disabled.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
 msgid "This document is no longer available to sign because the account that sent it has been disabled, likely due to spam or abuse."
-msgstr ""
+msgstr "Dit document kan niet meer worden ondertekend omdat het account dat het verzond is uitgeschakeld, waarschijnlijk wegens spam of misbruik."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document is signed in a set order and other recipients must sign before you. You will receive an email when it is your turn."
-msgstr ""
+msgstr "Dit document wordt in een vaste volgorde ondertekend en andere ontvangers moeten vóór jou ondertekenen. Je ontvangt een e-mail wanneer je aan de beurt bent."
 
 #: apps/remix/app/components/general/legacy-field-warning-popover.tsx
 msgid "This document is using legacy field insertion, we recommend using the new field insertion method for more accurate results."
@@ -12848,7 +12848,7 @@ msgstr ""
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-complete-dialog.tsx
 msgid "This document was already signed and no further action was taken."
-msgstr ""
+msgstr "Dit document was al ondertekend; er is geen verdere actie uitgevoerd."
 
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
 msgid "This document was created by you or a team member using the template above."
@@ -12921,7 +12921,7 @@ msgstr "Deze map bevat meerdere items. Verwijderen zorgt ervoor dat alle submapp
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "This image is invalid, please upload a valid image file."
-msgstr ""
+msgstr "Deze afbeelding is ongeldig. Upload een geldig afbeeldingsbestand."
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
@@ -13536,7 +13536,7 @@ msgstr "De ondertekeningsflow kan niet worden gestart"
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Unable to upload image"
-msgstr ""
+msgstr "Afbeelding kan niet worden geüpload"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
@@ -13867,7 +13867,7 @@ msgstr "Uploaden mislukt"
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Upload New Image"
-msgstr ""
+msgstr "Nieuwe afbeelding uploaden"
 
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Upload signature"
@@ -14664,7 +14664,7 @@ msgstr ""
 
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "We were unable to send the email. Please try again or contact support."
-msgstr ""
+msgstr "We konden de e-mail niet versturen. Probeer het opnieuw of neem contact op met support."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx
 msgid "We were unable to set your public profile to public. Please try again."
@@ -14795,7 +14795,7 @@ msgstr "We hebben een bevestigingsmail gestuurd naar <0>{email}</0>. Controleer 
 #. placeholder {0}: user.email
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "We've sent a link to {0}. Follow it to set your password, then sign in again to continue."
-msgstr ""
+msgstr "We hebben een link gestuurd naar {0}. Volg die link om je wachtwoord in te stellen en log daarna opnieuw in om verder te gaan."
 
 #. placeholder {0}: user.email
 #: apps/remix/app/components/forms/password-setup-request-button.tsx
@@ -15106,7 +15106,7 @@ msgstr "Je zit momenteel in het <0>Gratis abonnement</0>."
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "You are currently signed in as <0>{signedInAs}</0>. Signing in below will switch accounts."
-msgstr ""
+msgstr "Je bent momenteel ingelogd als <0>{signedInAs}</0>. Als je hieronder inlogt, wissel je van account."
 
 #. placeholder {0}: i18n.date(periodEnd)
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.tsx
@@ -15673,7 +15673,7 @@ msgstr "Je hebt een ontvanger verwijderd"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You removed a recipient as an administrator"
-msgstr ""
+msgstr "Je hebt als beheerder een ontvanger verwijderd"
 
 #. placeholder {0}: data.envelopeItemTitle
 #: packages/lib/utils/document-audit-logs.ts
@@ -15794,7 +15794,7 @@ msgstr "Uw account"
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Your account does not have a password and password sign in is disabled for this instance. Please contact the document sender to use a different authentication method."
-msgstr ""
+msgstr "Je account heeft geen wachtwoord en inloggen met een wachtwoord is uitgeschakeld op deze installatie. Neem contact op met de afzender van het document om een andere verificatiemethode te gebruiken."
 
 #: apps/remix/app/components/dialogs/account-delete-dialog.tsx
 msgid "Your account has been deleted successfully."
@@ -15827,7 +15827,7 @@ msgstr "Je brandingvoorkeuren zijn bijgewerkt"
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Your browser blocked the sign in window. Allow popups for this site and try again."
-msgstr ""
+msgstr "Je browser heeft het inlogvenster geblokkeerd. Sta pop-ups toe voor deze website en probeer het opnieuw."
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 msgid "Your browser does not support passkeys, which is required to approve this document."
@@ -15868,11 +15868,11 @@ msgstr "Je browser ondersteunt geen passkeys, wat vereist is om dit veld te beki
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Your browser is blocking the cookies needed to keep you signed in inside this embed. Open this document in a new tab instead."
-msgstr ""
+msgstr "Je browser blokkeert de cookies die nodig zijn om je in dit ingesloten venster ingelogd te houden. Open dit document in plaats daarvan in een nieuw tabblad."
 
 #: apps/remix/app/components/embed/embed-popup-auth.tsx
 msgid "Your browser needs permission to keep you signed in inside this embed. Press Continue and allow access when Safari asks."
-msgstr ""
+msgstr "Je browser heeft toestemming nodig om je in dit ingesloten venster ingelogd te houden. Klik op Doorgaan en sta de toegang toe wanneer Safari erom vraagt."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Your bulk send has been initiated. You will receive an email notification upon completion."
@@ -16167,7 +16167,7 @@ msgstr "Uw ondertekeningscertificaat is ongeldig, verlopen of mist een vereiste 
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Your signing link has expired. Please contact the sender to request a new one."
-msgstr ""
+msgstr "Je ondertekeningslink is verlopen. Vraag de afzender om een nieuwe."
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "Your signing provider authentication failed"
@@ -16254,9 +16254,9 @@ msgstr "your-domain.com another-domain.com"
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Zoom in"
-msgstr ""
+msgstr "Inzoomen"
 
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 #: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Zoom out"
-msgstr ""
+msgstr "Uitzoomen"
