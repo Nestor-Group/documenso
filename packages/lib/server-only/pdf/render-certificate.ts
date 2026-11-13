@@ -12,14 +12,11 @@ import { SigningStatus } from '@prisma/client';
 import Konva from 'konva';
 import { DateTime } from 'luxon';
 import { UAParser } from 'ua-parser-js';
-import { renderSVG } from 'uqr';
 
-import { NEXT_PUBLIC_WEBAPP_URL } from '../../constants/app';
 import { APP_I18N_OPTIONS } from '../../constants/i18n';
 import { getSignatureFontFamily } from '../../constants/pdf';
 import { RECIPIENT_ROLE_SIGNING_REASONS, RECIPIENT_ROLES_DESCRIPTION } from '../../constants/recipient-roles';
 import type { TDocumentAuditLogBaseSchema } from '../../types/document-audit-logs';
-import { svgToPng } from '../../utils/images/svg-to-png';
 import { ensureFontLibrary } from './helpers';
 
 type ColumnWidths = [number, number, number];
@@ -565,7 +562,7 @@ const renderRow = (options: RenderRowOptions) => {
   return rowGroup;
 };
 
-const renderBranding = async ({ qrToken, i18n }: { qrToken: string | null; i18n: I18n }) => {
+const renderBranding = async ({ i18n }: { qrToken: string | null; i18n: I18n }) => {
   const branding = new Konva.Group();
 
   const brandingHeight = 12;
@@ -593,35 +590,13 @@ const renderBranding = async ({ qrToken, i18n }: { qrToken: string | null; i18n:
     x: text.width() + 16,
   });
 
-  const qrSize = qrToken ? 72 : 0;
-
   const logoGroup = new Konva.Group({
-    y: qrSize + 16,
+    y: 16,
   });
   logoGroup.add(text);
   logoGroup.add(documensoImage);
 
   branding.add(logoGroup);
-
-  if (qrToken) {
-    const qrSvg = renderSVG(`${NEXT_PUBLIC_WEBAPP_URL()}/share/${qrToken}`, {
-      ecc: 'Q',
-    });
-
-    const svgImage = await svgToPng(qrSvg);
-
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    const qrSkiaImage = new SkiaImage(svgImage) as unknown as HTMLImageElement;
-    const qrImage = new Konva.Image({
-      image: qrSkiaImage,
-      height: qrSize,
-      width: qrSize,
-      x: branding.getClientRect().width - qrSize,
-      y: 0,
-    });
-
-    branding.add(qrImage);
-  }
 
   return branding;
 };
