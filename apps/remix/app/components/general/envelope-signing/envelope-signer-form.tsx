@@ -32,6 +32,10 @@ export default function EnvelopeSignerForm() {
     return recipientFields.some((field) => isSignatureFieldType(field.type));
   }, [recipientFields]);
 
+  const hasUnsignedSignatureField = useMemo(() => {
+    return recipientFields.some((field) => isSignatureFieldType(field.type) && !field.inserted);
+  }, [recipientFields]);
+
   const isSubmitting = false;
 
   if (recipient.role === RecipientRole.VIEWER) {
@@ -125,6 +129,12 @@ export default function EnvelopeSignerForm() {
               uploadSignatureEnabled={envelope.documentMeta.uploadSignatureEnabled}
               drawSignatureEnabled={envelope.documentMeta.drawSignatureEnabled}
             />
+
+            {hasUnsignedSignatureField && (
+              <p className="mt-2 text-muted-foreground text-xs">
+                <Trans>Then click the signature field in the document to place your signature.</Trans>
+              </p>
+            )}
           </div>
         )}
       </div>

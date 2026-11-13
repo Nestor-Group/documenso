@@ -2958,6 +2958,10 @@ msgstr "Tekenlimiet"
 msgid "Charts"
 msgstr "Grafieken"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Check your details"
+msgstr "Controleer de gegevens"
+
 #: apps/remix/app/components/forms/password-setup-request-button.tsx
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "Check your email"
@@ -3047,6 +3051,10 @@ msgstr "Selectie wissen"
 msgid "Clear Signature"
 msgstr "Handtekening wissen"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Click Complete"
+msgstr "Klik op Voltooien"
+
 #: apps/remix/app/components/tables/settings-public-profile-templates-table.tsx
 msgid "Click here to get started"
 msgstr "Klik hier om te beginnen"
@@ -3060,6 +3068,10 @@ msgstr "Klik hier om opnieuw te proberen"
 #: apps/remix/app/components/dialogs/organisation-member-invite-dialog.tsx
 msgid "Click here to upload"
 msgstr "Klik hier om te uploaden"
+
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Click the signature field and sign"
+msgstr "Klik op het handtekeningveld en onderteken"
 
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 msgid "Click to copy signing link for sending to recipient"
@@ -3178,6 +3190,7 @@ msgstr "Vul de velden in voor de volgende ondertekenaars."
 #: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
 #: apps/remix/app/components/tables/admin-document-jobs-table.tsx
@@ -11257,6 +11270,10 @@ msgstr "Herinneringen voor ondertekening"
 msgid "Signing Status"
 msgstr "Ondertekeningsstatus"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Signing steps"
+msgstr "Stappen om te ondertekenen"
+
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue."
 msgstr "Voor het ondertekenen van dit veld is een wachtwoord nodig, maar je account heeft er geen. We kunnen je een link mailen om er een in te stellen. Log daarna opnieuw in en keer terug naar dit document om verder te gaan."
@@ -12645,6 +12662,10 @@ msgstr "De webhook waar u naar zoekt, is mogelijk verwijderd, hernoemd of heeft 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Theme"
 msgstr ""
+
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-form.tsx
+msgid "Then click the signature field in the document to place your signature."
+msgstr "Klik daarna op het handtekeningveld in het document om de handtekening te plaatsen."
 
 #: packages/ui/components/document/reminder-settings-picker.tsx
 msgid "Then repeat every"

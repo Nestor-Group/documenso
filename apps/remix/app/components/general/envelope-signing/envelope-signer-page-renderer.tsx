@@ -44,6 +44,7 @@ import { handleTextFieldClick } from '~/utils/field-signing/text-field';
 
 import { useRequiredDocumentSigningAuthContext } from '../document-signing/document-signing-auth-provider';
 import { useRequiredEnvelopeSigningContext } from '../document-signing/envelope-signing-provider';
+import { EnvelopeSignerFieldEditIcon } from './envelope-signer-field-edit-icon';
 
 type GenericLocalField = TEnvelope['fields'][number] & {
   recipient: Pick<Recipient, 'id' | 'name' | 'email' | 'signingStatus'>;
@@ -142,6 +143,14 @@ export const EnvelopeSignerPageRenderer = ({ pageData }: { pageData: PageRenderD
         }));
     });
   }, [envelope.recipients, pageNumber, currentEnvelopeItem?.id]);
+
+  /**
+   * Text fields on this page the recipient can still edit (not read-only).
+   */
+  const localPageEditableTextFields = useMemo(
+    () => localPageFields.filter((field) => field.type === FieldType.TEXT && !field.fieldMeta?.readOnly),
+    [localPageFields],
+  );
 
   const unsafeRenderFieldOnLayer = (
     unparsedField: Field & { signature?: Signature | null },
@@ -644,6 +653,10 @@ export const EnvelopeSignerPageRenderer = ({ pageData }: { pageData: PageRenderD
 
       {/* The element Konva will inject it's canvas into. */}
       <div className="konva-container absolute inset-0 z-10 w-full" ref={konvaContainer}></div>
+
+      {localPageEditableTextFields.map((field) => (
+        <EnvelopeSignerFieldEditIcon key={field.id} field={field} />
+      ))}
     </>
   );
 };

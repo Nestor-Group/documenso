@@ -2953,6 +2953,10 @@ msgstr "Character Limit"
 msgid "Charts"
 msgstr "Charts"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Check your details"
+msgstr "Check your details"
+
 #: apps/remix/app/components/forms/password-setup-request-button.tsx
 #: apps/remix/app/components/forms/password-setup-request.tsx
 msgid "Check your email"
@@ -3042,6 +3046,10 @@ msgstr "Clear selection"
 msgid "Clear Signature"
 msgstr "Clear Signature"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Click Complete"
+msgstr "Click Complete"
+
 #: apps/remix/app/components/tables/settings-public-profile-templates-table.tsx
 msgid "Click here to get started"
 msgstr "Click here to get started"
@@ -3055,6 +3063,10 @@ msgstr "Click here to retry"
 #: apps/remix/app/components/dialogs/organisation-member-invite-dialog.tsx
 msgid "Click here to upload"
 msgstr "Click here to upload"
+
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Click the signature field and sign"
+msgstr "Click the signature field and sign"
 
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 msgid "Click to copy signing link for sending to recipient"
@@ -3173,6 +3185,7 @@ msgstr "Complete the fields for the following signers."
 #: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
 #: apps/remix/app/components/tables/admin-document-jobs-table.tsx
@@ -11252,6 +11265,10 @@ msgstr "Signing Reminders"
 msgid "Signing Status"
 msgstr "Signing Status"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx
+msgid "Signing steps"
+msgstr "Signing steps"
+
 #: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 msgid "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue."
 msgstr "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue."
@@ -12640,6 +12657,10 @@ msgstr "The webhook you are looking for may have been removed, renamed or may ha
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Theme"
 msgstr "Theme"
+
+#: apps/remix/app/components/general/envelope-signing/envelope-signer-form.tsx
+msgid "Then click the signature field in the document to place your signature."
+msgstr "Then click the signature field in the document to place your signature."
 
 #: packages/ui/components/document/reminder-settings-picker.tsx
 msgid "Then repeat every"
