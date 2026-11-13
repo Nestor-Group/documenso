@@ -1,3 +1,33 @@
+> **About this branch (`v2.22.0-ot.3`)**
+>
+> This branch is Documenso `v2.22.0` (commit `d32d049165db230820465b4f566061ba8fa27012`) with a few patches, one commit per patch on
+> top of the tag. It is the complete corresponding source of a modified version of Documenso that is
+> offered to users over a network, published as required by section 13 of the GNU Affero General
+> Public License v3.0. Documenso and these patches are licensed under the AGPL-3.0 (see `LICENSE`);
+> nothing under `packages/ee/` is changed, and Documenso's copyright and license notices are unchanged.
+>
+> | Patch | What it does | Files |
+> | --- | --- | --- |
+> | 0001 | Removes the QR code (a link to `/share/<token>`) from the signing certificate; the "Signing certificate provided by" block stays, as Documenso draws it for envelopes without a QR token. | `packages/lib/server-only/pdf/render-certificate.ts`, `apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx` |
+> | 0002 | Pins the base image `node:24-alpine3.23` to a digest. | `docker/Dockerfile` |
+> | 0003 | Adds the missing Dutch and French translations of the signing pages (67 strings each). | `packages/lib/translations/nl/web.po`, `packages/lib/translations/fr/web.po` |
+> | 0004 | Adds a "Source code (AGPL-3.0)" link at the bottom of the recipient pages. The URL comes from the required build argument `OT_BRONCODE_URL` (an https URL); the build fails without it. | `apps/remix/app/routes/_recipient+/_layout.tsx`, `docker/Dockerfile`, `packages/lib/translations/{en,nl,fr}/web.po` |
+> | 0005 | Updates `pdfjs-dist` from 5.4.296 to 5.7.284 (and, through the lockfile, its optional dependency `@napi-rs/canvas` from 0.1.83 to 0.1.100). pdf.js 5.4.296 cannot draw function-based shadings (PDF shading type 1) and paints them in a solid fallback colour in the PDF viewer; 5.7.284 is the first release that draws them. No source file is changed. | `package.json`, `packages/ui/package.json`, `package-lock.json` |
+> | 0006 | Signing page (envelope view): a row of steps above the document ("Check your details", "Click the signature field and sign", "Click Complete") whose state (done, current, upcoming) follows the signer: checking the details stays current until no required field is empty and a signature is ready in the signature pad or a signature field is signed; a hint under the signature pad to click the signature field after drawing; a small pencil on editable text fields. Display only: no change to signing, the API or the database. English, Dutch and French strings. | `apps/remix/app/components/general/document-signing/document-signing-page-view-v2.tsx`, `apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx`, `apps/remix/app/components/general/envelope-signing/envelope-signer-form.tsx`, `apps/remix/app/components/general/envelope-signing/envelope-signer-field-edit-icon.tsx`, `apps/remix/app/components/general/envelope-signing/envelope-signer-page-renderer.tsx`, `packages/lib/translations/{en,nl,fr}/web.po` |
+> | 0007 | Adds an optional `format: "vat"` to the text field meta (stored in the existing JSON column, no migration). A value the recipient enters in such a field must be an EU VAT number (Belgian numbers with the mod-97 check, Dutch numbers in the NL…B.. form, other EU prefixes loosely); checked in the signing dialog and on the server. A prefilled value that does not match is not auto-inserted: the dialog opens with that value and the error, and the field keeps the "check your details" step open until it is corrected. Unit tests in `packages/lib/utils/vat-number.test.ts`. | `packages/lib/utils/vat-number.ts`, `packages/lib/utils/vat-number.test.ts`, `packages/lib/types/field-meta.ts`, `apps/remix/app/components/general/envelope-signing/envelope-signer-steps.tsx`, `packages/lib/advanced-fields-validation/validate-text.ts`, `packages/lib/server-only/document/send-document.ts`, `apps/remix/app/components/dialogs/sign-field-text-dialog.tsx`, `packages/lib/translations/{en,nl,fr}/web.po` |
+> | 0008 | Adds the optional runtime flag `NEXT_PUBLIC_DISABLE_RECIPIENT_PRESIGN_DOWNLOAD`. When it is `true`, the "Download PDF" action on the signing page (envelope view: sidebar and mobile actions menu) is hidden until the recipient has signed. Default (unset): unchanged. Only the action is hidden: the document file stays reachable, because the PDF viewer loads it. Declared like the other `NEXT_PUBLIC_*` flags (types, `turbo.json`, `.env.example`, docs, compose and Render examples). | `apps/remix/app/components/general/document-signing/document-signing-page-view-v2.tsx`, `apps/remix/app/components/general/envelope-signing/envelope-signer-header.tsx`, `packages/tsconfig/process-env.d.ts`, `turbo.json`, `.env.example`, `apps/docs/content/docs/self-hosting/configuration/environment.mdx`, `docker/production/compose.yml`, `render.yaml` |
+>
+> Build (same as upstream, plus the build argument):
+>
+> ```bash
+> docker build -f docker/Dockerfile --build-arg OT_BRONCODE_URL=<URL of this branch> .
+> ```
+>
+> Configuration at runtime uses Documenso's usual environment variables; no configuration is part of
+> this branch. The original README follows.
+
+---
+
 <img src="https://github.com/documenso/documenso/assets/13398220/a643571f-0239-46a6-a73e-6bef38d1228b" alt="Documenso Logo">
 
 <p align="center" style="margin-top: 20px">
